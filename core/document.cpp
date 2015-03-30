@@ -3483,13 +3483,13 @@ bool Document::canSaveChanges( SaveCapability cap ) const
 {
     switch ( cap )
     {
-        case SaveFormsCapability:
+        case Document::Forms:
             /* Assume that if the generator supports saving, forms can be saved.
              * We have no means to actually query the generator at the moment
              * TODO: Add some method to query the generator in SaveInterface */
             return canSaveChanges();
 
-        case SaveAnnotationsCapability:
+        case Document::Annotations:
             return d->canAddAnnotationsNatively();
     }
 
